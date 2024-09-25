@@ -1,0 +1,147 @@
+{
+    "es": [
+        {
+            "solutions" : "Soluciones",
+            "services" : "Servicios",
+            "tecnologies" : "Tecnologias",
+            "about_us": "Acerca de",
+            "contact" : "Contacto",
+            "blog" : "Blog",
+            
+            "papermaking_equip" :"Equipos de Fabricación de Papel",
+            "pm_auxilieres" : "PM Auxiliares",
+            "paper_pm_chemicals" : "PapelPM Químicos",
+            "paper_converting" : "Conversión de papel",
+            "services_pm" : "Servicios de PM",
+            "pm_specialized_engineering" : "PM Ingeniería Especializada",
+
+            "runtech": "Runtech",
+            "papermachine_components": "Componentes de la máquina de papel",
+
+            "qualifiber": "Qualifiber",
+            "stock_prep_complete": "Stock Prep Complete",
+
+            "progressive_energy_systems" : "Progressive Energy Systems",
+            "steam_and_heat_systems" : "Steam and Heat systems",
+
+            "aurelia" : "Aurelia",
+            "on_line_qcs_for_physical_properties" : "on line QCS for physical properties"
+            
+        }
+    ],
+    "en": [
+        {
+            "solutions" : "Solutions",
+            "services" : "Services",
+            "tecnologies" : "Tecnologies",
+            "about_us": "About Us",
+            "contact" : "Contact",
+            "blog" : "Blog",
+            "papermaking_equip" :"Papermaking Equipment",
+            "pm_auxilieres" : "PM Auxilieries",
+            "paper_pm_chemicals" : "PaperPM Chemicals",
+            "paper_converting" : "Paper Converting",
+            "services_pm" : "Services PM",
+            "pm_specialized_engineering" : "PM Specialized Engineering"
+
+        }
+    ],
+    "pt": [
+        {
+
+        }
+    ],
+
+    "tecnologies_items": [
+        {
+          "group_one": {
+            "title": {
+              "es": "Equipos de Fabricación de Papel",
+              "en": "Papermaking Equipment",
+              "pt": "Equipamento para fabricação de papel"
+            },
+            "items": [
+              { 
+                "title": {
+                  "es": "Runtech",
+                  "en": "Runtech",
+                  "pt": "Runtech"
+                },
+                "subtitle": {
+                  "es": "Soluciones para la industria de pulpa y papel (Finlandia)",
+                  "en": "Solutions for the pulp and paper industry (Finland)",
+                  "pt": "Soluções para a indústria de celulose e papel (Finlândia)"
+                },
+                "link": "/tecnologies/runtech",
+                "img": "runtech.png"
+              },
+              {
+                "title": {
+                  "es": "Qualifiber",
+                  "en": "Qualifiber",
+                  "pt": "Qualifiber"
+                },
+                "subtitle": {
+                  "es": "Máquinas para la preparación de pasta de papel usado (OCC)",
+                  "en": "Machines for the preparation of waste paper pulp (OCC)",
+                  "pt": "Máquinas para preparação de pasta de papel residual (OCC)"
+                },
+                "link": "/tecnologies/qualifiber",
+                "img": "qualifiber.png"
+              },
+              {
+                "title": {
+                  "es": "Pesint",
+                  "en": "Pesint",
+                  "pt": "Pesint"
+                },
+                "subtitle": {
+                  "es": "Máquinas para la preparación de pasta de papel usado (OCC)",
+                  "en": "Progressive energy services",
+                  "pt": "Serviços de energia progressivos"
+                },
+                "link": "/tecnologies/Pesint",
+                "img": "Pesint.png"
+              }
+            ]
+          },
+          "group_two": {
+            "title": {
+              "es": "Auxiliares PM",
+              "en": "PM Auxilieries",
+              "pt": "Auxiliares PM"
+            },
+            "items": [
+              {
+                "title": {
+                  "es": "Aurelia",
+                  "en": "Aurelia",
+                  "pt": "Aurelia"
+                },
+                "subtitle": {
+                  "es": "Medición continua y no destructiva de la calidad del papel.",
+                  "en": "Continuous, non-destructive measurement of paper quality.",
+                  "pt": "Medição contínua e não destrutiva da qualidade do papel."
+                },
+                "link": "/tecnologies/aurelia",
+                "img": "aurelia.png"
+              },
+              {
+                "title": {
+                  "es": "Sensorik",
+                  "en": "Sensorik",
+                  "pt": "Sensorik"
+                },
+                "subtitle": {
+                  "es": "Sensores innovadores con fibra óptica robusta para reconocimiento de material/humedad/objetos.",
+                  "en": "Innovative sensors with robust optical fiber for material/moisture/object recognition.",
+                  "pt": "Sensores inovadores com fibra óptica robusta para reconhecimento de materiais/umidade/objetos."
+                },
+                "link": "/tecnologies/sensorik",
+                "img": "sensorik.png"
+              }
+            ]
+          }
+        }
+      ]
+}
