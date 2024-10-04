@@ -33,7 +33,7 @@ function writeTemplate(language) {
     fetch('../scripts/data.json')
     .then(response => response.json())
     .then(dataJson => {
-            if(language.indexOf('es') !== -1) { let es = dataJson["es"]; $header.innerHTML = write(es, "es"); manejador(dataJson) }
+            if(language.indexOf('es') !== -1) { let es = dataJson["es"]; $header.innerHTML = write(es, "es");  }
             else if(language.indexOf('pt') !== -1) { let pt = dataJson["pt"]; $header.innerHTML = write(pt, "pt") } // portugues aún no establecido
             else if(language.indexOf('en') !== -1) { let en = dataJson["en"]; $header.innerHTML = write(en, "en")}
             else { let es = dataJson["es"]; $header.innerHTML = write(es, "es") }
@@ -151,7 +151,7 @@ var data = {
                             "es": "Máquinas para la preparación de pasta de papel usado (OCC)",
                             "en": "Machines for the preparation of waste paper pulp (OCC)",
                             "pt": "Máquinas para preparação de pasta de papel residual (OCC)"
-                          }
+                          },
                     },
                     {
                         "id": "pesint",
@@ -164,7 +164,46 @@ var data = {
                             "es": "Máquinas para la preparación de pasta de papel usado (OCC)",
                             "en": "Progressive energy services",
                             "pt": "Serviços de energia progressivos"
-                        }
+                        },
+                    },
+                    {
+                        "id": "hergen",
+                        "title": {
+                            "es": "Hergen",
+                            "en": "Hergen",
+                            "pt": "Hergen"
+                        },
+                        "subtitle": {
+                            "es": "Máquinas de papel desde Headbox hasta Rewinder.",
+                            "en": "Paper machines from Headbox to Rewinder.",
+                            "pt": "Máquinas de papel da Headbox ao Rewinder."
+                        },
+                    },
+                    {
+                        "id": "projet",
+                        "title": {
+                            "es": "ProJet B.V.",
+                            "en": "ProJet B.V.",
+                            "pt": "ProJet B.V."
+                        },
+                        "subtitle": {
+                            "es": "ProJet ofrece tecnología profesional de chorro de agua a alta presión.",
+                            "en": "ProJet delivers professional high-pressure water jet technology.",
+                            "pt": "A ProJet oferece tecnologia profissional de jato de água de alta pressão."
+                        },
+                    },
+                    {
+                        "id": "tashowheel",
+                        "title": {
+                            "es": "Tashowheel",
+                            "en": "Tashowheel",
+                            "pt": "Tashowheel"
+                        },
+                        "subtitle": {
+                            "es": "Sistemas completos de control de calidad.",
+                            "en": "Complete quality control systems.",
+                            "pt": "Sistemas completos de controle de qualidade."
+                        },
                     }
                 ]
             },
@@ -350,6 +389,18 @@ var data = {
         "tecnomeca": {
             "link": "/articles/tecnomeca",
             "img": "tecnomeca.png"      
+        },
+        "hergen": {
+            "link": "/articles/hergen",
+            "img": "hergen.png"
+        },
+        "projet": {
+            "link": "/articles/projet",
+            "img": "projet.png"
+        },
+        "tashowheel": {
+            "link": "/articles/tashowheel",
+            "img": "tashowheel.png"
         }
     }
 };
@@ -359,23 +410,19 @@ function write(text, lang) {
     let header = "";
     for(let i=0; i < text.length; i++) {
     header += `
-    <a class="logo" href="/">&nbsp;</a>
-        <input type="checkbox" id="openMenu" class="open-menu">
-        <nav id="nav"> 
+        <a class="logo" href="/">&nbsp;</a>
+        <button id="openMenu" class="open-menu" onclick="openMenu('nav')">&#32;</button>
+        <nav id="nav" class="nav"> 
             <a id="itemSolutions" class="item-solutions with-sub" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</a>
-            <label class="item-solutions with-sub" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</label>
-            <input type="checkbox" id="itemSolutions${i}" class="open-menu int">
-                <div class="sub menu-solutions">
+                <div class="sub menu-solutions" id="menuSolutions">
                     <i>Soluciones ...</i>
                 </div>
             <!--- -->
-            <a class="item-tecnologies with-sub" for="itemTecnologies${i}">${text[i]['tecnologies']}&nbsp;&nbsp;</a>
-            <label class="item-tecnologies with-sub" for="itemTecnologies${i}">${text[i]['tecnologies']}&nbsp;&nbsp;</label>
-            <input type="checkbox" id="itemTecnologies${i}" class="open-menu int">`;
+            <a class="item-tecnologies with-sub" for="itemTecnologies${i}" onclick="openMenu('tecnologies')">${text[i]['tecnologies']}&nbsp;&nbsp;</a>`;
     header += setMenuTecnologies(data, lang);
     header +=`<a id="itemAbout" class="item-about" href="/about-us.html">${text[i]['about_us']}</a>
-            <a href="/contact.html"><span>${text[i]['contact']}</span></a>
             <a href="#"><span>${text[i]['blog']}</span></a>
+            <a href="/contact.html"><span>${text[i]['contact']}</span></a>
         </nav>
         <div class="lang-cont">
             <a class="openLangs">&nbsp;</a>
@@ -390,12 +437,44 @@ function write(text, lang) {
 }
 
 function setMenuTecnologies(menuData, idioma) {
-    let subMenuTecnologies = `<div class=\"sub menu-tecnologies">`;
+    let subMenuTecnologies = `<div class="sub menu-tecnologies" id="menuTecnologies">`;
     subMenuTecnologies += writeSubMenu(menuData, idioma);
     subMenuTecnologies += `</div>`;
     return subMenuTecnologies;
 }
+function openMenu(clase) {
+    switch (clase) {
+        case "nav":
+            let nav = document.getElementById("nav");
+            let navClassList = nav.classList;
+            navClassList.toggle("active");
+            break;
+        case "solutions":
+            let solutions = document.getElementById("menuSolutions");
+            if(solutions.style.display === "block") {
+                solutions.style.display = "none"
+            } else {
+                solutions.style.display = "block"
+            }
+            break;
+        case "tecnologies":
+            let tecnologies = document.getElementById("menuTecnologies");
 
+            let firstTecnologies = tecnologies.querySelectorAll("div");
+            firstTecnologies[1].style.display = "inline-block";
+            firstTecnologies[1].style.boxSizing = "border-box";
+
+            if(tecnologies.style.display === "block") {
+                tecnologies.style.display = "none"
+            } else {
+                tecnologies.style.display = "block"
+            }
+            break;
+
+    } 
+
+    
+}
 function writeSubMenu(menuData, idioma){
     let html = '<div class="group-items">';
 
