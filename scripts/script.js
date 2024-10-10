@@ -412,26 +412,28 @@ function write(text, lang) {
     header += `
         <a class="logo" href="/">&nbsp;</a>
         <button id="openMenu" class="open-menu" onclick="openMenu('nav')">&#32;</button>
-        <nav id="nav" class="nav"> 
-            <a id="itemSolutions" class="item-solutions with-sub" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</a>
-                <div class="sub menu-solutions" id="menuSolutions">
-                    <i>Soluciones ...</i>
-                </div>
-            <!--- -->
-            <a class="item-tecnologies with-sub" for="itemTecnologies${i}" onclick="openMenu('tecnologies')">${text[i]['tecnologies']}&nbsp;&nbsp;</a>`;
+            <nav id="nav" class="nav"> 
+                <a id="itemSolutions" class="item-solutions with-sub" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</a>
+                    <div class="sub menu-solutions" id="menuSolutions">
+                        <i>Soluciones ...</i>
+                    </div>
+                <!--- -->
+                <a class="item-tecnologies with-sub" for="itemTecnologies${i}" onclick="openMenu('tecnologies')">${text[i]['tecnologies']}&nbsp;&nbsp;</a>`;
+
     header += setMenuTecnologies(data, lang);
+
     header +=`<a id="itemAbout" class="item-about" href="/about-us.html">${text[i]['about_us']}</a>
-            <a href="#"><span>${text[i]['blog']}</span></a>
-            <a href="/contact.html"><span>${text[i]['contact']}</span></a>
-        </nav>
-        <div class="lang-cont">
-            <a class="openLangs">&nbsp;</a>
-                <div class="flags">
-                    <a class="flag en" id="langEn" onclick="setLang('en');">&nbsp;</a>
-                    <a class="flag es" id="langEs" onclick="setLang('es');">&nbsp;</a>
-                    <a class="flag pt" id="langPt" onclick="setLang('pt');">&nbsp;</a>
-                </div>
-        </div>`
+                <a href="#"><span>${text[i]['blog']}</span></a>
+                <a href="/contact.html"><span>${text[i]['contact']}</span></a>
+            </nav>
+            <div class="lang-cont">
+                <a class="openLangs">&nbsp;</a>
+                    <div class="flags">
+                        <a class="flag en" id="langEn" onclick="setLang('en');">&nbsp;</a>
+                        <a class="flag es" id="langEs" onclick="setLang('es');">&nbsp;</a>
+                        <a class="flag pt" id="langPt" onclick="setLang('pt');">&nbsp;</a>
+                    </div>
+            </div>`
     }
     return header;
 }
@@ -443,6 +445,9 @@ function setMenuTecnologies(menuData, idioma) {
     return subMenuTecnologies;
 }
 function openMenu(clase) {
+    let solutions = document.getElementById("menuSolutions");
+    let tecnologies = document.getElementById("menuTecnologies");
+
     switch (clase) {
         case "nav":
             let nav = document.getElementById("nav");
@@ -450,16 +455,16 @@ function openMenu(clase) {
             navClassList.toggle("active");
             break;
         case "solutions":
-            let solutions = document.getElementById("menuSolutions");
             if(solutions.style.display === "block") {
                 solutions.style.display = "none"
             } else {
+                tecnologies.style.display = "none"
                 solutions.style.display = "block"
             }
             break;
         case "tecnologies":
-            let tecnologies = document.getElementById("menuTecnologies");
 
+            // Primer elemento en 'active':
             let firstTecnologies = tecnologies.querySelectorAll("div");
             firstTecnologies[1].style.display = "inline-block";
             firstTecnologies[1].style.boxSizing = "border-box";
@@ -467,6 +472,7 @@ function openMenu(clase) {
             if(tecnologies.style.display === "block") {
                 tecnologies.style.display = "none"
             } else {
+                solutions.style.display = "none"
                 tecnologies.style.display = "block"
             }
             break;
