@@ -453,6 +453,11 @@ function openMenu(clase) {
             let nav = document.getElementById("nav");
             let navClassList = nav.classList;
             navClassList.toggle("active");
+            
+            let langConteiner = document.querySelector(".lang-cont");
+            let langConteinerClassList = langConteiner.classList
+            langConteinerClassList.toggle("flex")
+
             break;
         case "solutions":
             if(solutions.style.display === "block") {
