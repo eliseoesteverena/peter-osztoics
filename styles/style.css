@@ -80,8 +80,8 @@ label.item-tecnologies, label.item-solutions {display: none;}
 .open-menu.active { background-image: url(../img/close.svg);}
 .open-menu.active ~ .lang-cont { display: flex; }
 
-.with-sub:hover + .menu-solutions { display: inline-block; }
-.with-sub:hover + .menu-tecnologies { display: inline-block; }
+.item-solutions:hover + .menu-solutions { display: inline-block; }
+.item-tecnologies:hover + .menu-tecnologies { display: inline-block; }
 .with-sub:hover + .menu-tecnologies>.group-items>a:first-child { background-color: #173E00;background-image: url(../img/arrows.svg);background-position: 96% 50%;background-repeat: no-repeat;color:#F2DA5E;background-size:6.3%;border:none;text-decoration: none;}
 
 nav a:hover, nav label:hover {
