@@ -19,6 +19,9 @@ body {
     font-family: "Work Sans", sans-serif;  
     color: #173E00;
 }
+*:hover {
+    transition: all 0.1s linear;
+}
 
 header { margin: 0; padding: 0; height: 5rem;margin-top: 4px; align-items: center; display: flex;padding-bottom: 0.2rem;}
 
@@ -112,8 +115,8 @@ a.item-tecnologies:hover {background-color: #173E00;color: #F2DA5E;background-im
 .sub:hover {display: block;}
 
 .container {width: 80rem;max-width:100%;margin: 0 auto;}
-.home {display: flex;flex-direction: column;align-items: center;margin-top: 3rem;line-height: 3rem;text-align: center;}
-.hero h1{font-size: 4.5rem;font-weight: 700;}
+.home {display: flex;flex-direction: column;align-items: center;margin-top: 3rem;line-height: 3rem;text-align: center;padding: 1rem;box-sizing: border-box;}
+.hero h1{font-size: 4.5rem;font-weight: 700;line-height: 1;}
 .hero h2{font-size: 2.1rem;font-weight: 700;margin: 1rem 0;}
 .hero h3{font-size: 1.2rem;font-weight: 600;margin: .5rem 0;}
 .hero p {font-size: 1.3rem;text-transform: uppercase;max-width: 70%;text-align: center;font-weight: 500;line-height: 2rem;margin: 1rem auto;}
@@ -132,7 +135,7 @@ article h2 {font-size: 1.5rem;font-weight: 700;margin-top: 1.4rem;}
 article h3 {font-weight: 600;}
 article ul {padding-left: 1rem;margin: 0 1rem;line-height: 1.5;}
 article li {display: list-item;list-style: outside;}
-article strong {}
+/*article strong {} */
 
 @media screen and (max-width: 1100px) {
     html {font-size: 14px;}/*
