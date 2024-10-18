@@ -205,7 +205,20 @@ function write(text, lang) {
                                 "en": "Specialized chemical dosege system.",
                                 "pt": "Sistema de dosagem química especializado."
                             }
-                        }
+                        },
+                        {
+                            "id": "tm-systems",
+                            "title": {
+                                "es": "TM Systems",
+                                "en": "TM Systems",
+                                "pt": "TM Systems"
+                            },
+                            "subtitle": {
+                                "es": "Flujos secundarios y subproductos, cómo lodos de industrias, subproductos de plantas de biogás...",
+                                "en": "Specialized chemical dosege system.",
+                                "pt": "Sistema de dosagem química especializado."
+                            }
+                        },
                     ]
                 },
                 "group_three": {
@@ -297,6 +310,32 @@ function write(text, lang) {
                                 "en": "All types of laboratory equipment/instruments",
                                 "pt": "Todos os tipos de equipamentos/instrumentos de laboratório."
                                 },
+                        },
+                        {
+                            "id": "malflo",
+                            "title": {
+                                "es": "MalFlo SRL",
+                                "en": "MalFlo SRL",
+                                "pt": "MalFlo SRL"
+                                },
+                            "subtitle": {
+                                "es": "Servicios de Mantenimiento e Instalación, todas las disciplinas...",
+                                "en": "Maintenance & Installation Services, all disciplines...",
+                                "pt": "Serviços de manutenção e instalação, todas as disciplinas..."
+                                },
+                        },
+                        {
+                            "id": "latampaper",
+                            "title": {
+                                "es": "LatamPaper",
+                                "en": "LatamPaper",
+                                "pt": "LatamPaper"
+                                },
+                            "subtitle": {
+                                "es": "Organización de eventos del sector",
+                                "en": "Industry events organization ",
+                                "pt": "Organização de eventos da indústria"
+                                },
                         }
                     ]
                 },
@@ -370,7 +409,7 @@ function write(text, lang) {
                 "img": "hergen.png"
             },
             "projet": {
-                "link": "/articles/projet",
+                "link": "/articles/projet-bv",
                 "img": "projet.png"
             },
             "tasowheel": {
@@ -380,6 +419,18 @@ function write(text, lang) {
             "orloga": {
                 "link": "/articles/orloga",
                 "img": "orloga.png"
+            },
+            "tm-systems": {
+                "link": "/articles/tm-systems",
+                "img": "tym-systems.png"
+            },
+            "malflo": {
+                "link": "/articles/malflo",
+                "img": "malflo.png"
+            },
+            "latampaper": {
+                "link": "#",
+                "img": "latampaper.png"
             }
         }
     };
