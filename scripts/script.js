@@ -88,10 +88,10 @@ function write(text, lang) {
                                 "pt": "Runtech"
                                 },
                             "subtitle": {
-                                "es": "Soluciones para la industria de pulpa y papel (Finlandia)",
-                                "en": "Solutions for the pulp and paper industry (Finland)",
-                                "pt": "Soluções para a indústria de celulose e papel (Finlândia)"
-                                },
+                                    "es": "Soluciones industriales disruptivas en áreas de vacío, enhebrado de hoja, estabilización de la hoja en la primera batería y deshidratación en las prensas.",
+                                    "en": "Disruptive industrial solutions in the areas of vacuum, sheet threading, sheet stabilization in the first battery and dehydration in the presses.",
+                                    "pt": "Soluções industriais disruptivas nas áreas de vácuo, rosqueamento de chapas, estabilização de chapas na primeira bateria e desidratação nas prensas."
+                                    },
                         },
                         {
                             "id": "qualifiber",
@@ -114,9 +114,9 @@ function write(text, lang) {
                                 "pt": "Pesint"
                             },
                             "subtitle": {
-                                "es": "Máquinas para la preparación de pasta de papel usado (OCC)",
-                                "en": "Progressive energy services",
-                                "pt": "Serviços de energia progressivos"
+                                "es": "Tecnologías innovadoras para explorar energía residual. Sistemas de vapor y condensado, campanas y ventilación de edificios en una fábrica de papel y todas las industrias donde se utiliza vapor en el proceso.",
+                                "en": "Innovative technologies to explore waste energy. Steam and condensate systems, hoods and building ventilation in a paper mill and all industries where steam is used in the process.",
+                                "pt": "Tecnologias inovadoras para explorar resíduos de energia. Sistemas de vapor e condensado, exaustores e ventilação predial em uma fábrica de papel e em todas as indústrias onde o vapor é utilizado no processo."
                             },
                         },
                         {
@@ -175,9 +175,9 @@ function write(text, lang) {
                                 "pt": "Aurelia"
                             },
                             "subtitle": {
-                                "es": "Medición continua y no destructiva de la calidad del papel.",
-                                "en": "Continuous, non-destructive measurement of paper quality.",
-                                "pt": "Medição contínua e não destrutiva da qualidade do papel."
+                                "es": "Proporciona una medición continua y no destructiva de la calidad del papel. Revolucionando la forma en que la industria papelera puede producir papel y controlar su calidad con sistemas de medición no destructivos en tiempo real. Un sistema absolutamente novedoso para el control de calidad de los valores físicos del papel online.",
+                                "en": "Provides continuous, non-destructive measurement of paper quality. Revolutionizing the way the paper industry can produce paper and control its quality with real-time non-destructive measurement systems. A completely new system for online quality control of physical paper values.",
+                                "pt": "Fornece medição contínua e não destrutiva da qualidade do papel. Revolucionando a maneira como a indústria papeleira pode produzir papel e controlar sua qualidade com sistemas de medição não destrutivos e em tempo real. Um sistema absolutamente novo para controle de qualidade dos valores físicos do papel online."
                             },
                         },
                         {
@@ -188,9 +188,9 @@ function write(text, lang) {
                                 "pt": "Sensorik"
                             },
                             "subtitle": {
-                                "es": "Sensores innovadores con fibra óptica robusta para reconocimiento de material/humedad/objetos.",
-                                "en": "Innovative sensors with robust optical fiber for material/moisture/object recognition.",
-                                "pt": "Sensores inovadores com fibra óptica robusta para reconhecimento de materiais/umidade/objetos."
+                                "es": "Sensores innovadores con fibra óptica robusta para reconocimiento de material/humedad/objetos. Particularmente útil a la salida de la prensa y entrada de la prensa de encolado en una máquina de papel",
+                                "en": "Innovative sensors with robust optical fibre for material/moisture/object recognition. Particularly useful at the press exit and inlet of the size press on a paper machine.",
+                                "pt": "Sensores inovadores com fibra óptica robusta para reconhecimento de materiais/umidade/objetos. Particularmente útil na saída da prensa e entrada da prensa de colagem numa máquina de papel."
                             }
                         },
                         {
@@ -214,9 +214,61 @@ function write(text, lang) {
                                 "pt": "TM Systems"
                             },
                             "subtitle": {
-                                "es": "Flujos secundarios y subproductos, cómo lodos de industrias, subproductos de plantas de biogás...",
-                                "en": "Specialized chemical dosege system.",
-                                "pt": "Sistema de dosagem química especializado."
+                                "es": "Flujos secundarios y subproductos, cómo lodos de industrias, subproductos de plantas de biogás y de fibras recicladas, lodos de destilerías y cervecerías, así como residuos municipales del tratamiento de aguas: se pueden secar y utilizar, entre otras cosas.",
+                                "en": "Secondary streams and by-products, such as industrial sludge, by-products from biogas plants and recycled fibres, sludge from distilleries and breweries, as well as municipal waste from water treatment: these can be dried and used, among other things.",
+                                "pt": "Fluxos secundários e subprodutos, como lamas industriais, subprodutos de fábricas de biogás e fibras recicladas, lamas de destilarias e cervejarias, bem como resíduos municipais provenientes do tratamento de águas: podem ser secos e utilizados, entre outras coisas."
+                            }
+                        },
+                        {
+                            "id": "bvg",
+                            "title": {
+                                "es": "BVG",
+                                "en": "BVG",
+                                "pt": "BVG"
+                            },
+                            "subtitle": {
+                                "es": "Conversión enzimática continúa patentada de almidón nativo. Almidón procesado con viscosidad final optimizada y distribución de peso molecular. Se han vendido más de 200 Super-ECC® en todo el mundo.",
+                                "en": "Patented continuous enzymatic conversion of native starch. Processed starch with optimized final viscosity and molecular weight distribution. More than 200 Super-ECC® have been sold worldwide.",
+                                "pt": "Conversão enzimática contínua patenteada de amido nativo. Amido processado com viscosidade final e distribuição de peso molecular otimizadas. Mais de 200 Super-ECC® foram vendidos em todo o mundo."
+                            }
+                        },
+                        {
+                            "id": "fmw",
+                            "title": {
+                                "es": "FMW",
+                                "en": "FMW",
+                                "pt": "FMW"
+                            },
+                            "subtitle": {
+                                "es": "Sistemas de alimentación de pulper, transportadores, estación de pesado, retirada de alambre en línea... Todo tipo de transporte de material.",
+                                "en": "Pulper feeding systems, conveyors, weighing stations, in-line wire removal... All types of material transport.",
+                                "pt": "Sistemas de alimentação de despolpadores, transportadores, estação de pesagem, remoção de fios em linha... Todo tipo de transporte de materiais."
+                            }
+                        },
+                        {
+                            "id": "moveroll",
+                            "title": {
+                                "es": "Moveroll",
+                                "en": "Moveroll",
+                                "pt": "Moveroll"
+                            },
+                            "subtitle": {
+                                "es": "Los productos para el uso de rodillos MoveRoll son exclusivos e innovadores. Pueden ser fácilmente integrados a sistemas de manual de manejo de rollos y ofrecer una manera simple e innovadora de transportar o recibir rollos de papel con cuidado.",
+                                "en": "MoveRoll roller-based products are unique and innovative. They can be easily integrated into manual roll handling systems and offer a simple and innovative way to transport or receive paper rolls with care.",
+                                "pt": "Os produtos de rolos MoveRoll são exclusivos e inovadores. Eles podem ser facilmente integrados em sistemas manuais de manuseio de rolos e oferecem uma maneira simples e inovadora de transportar ou receber rolos de papel com cuidado."
+                            }
+                        },
+                        {
+                            "id": "ap_tela",
+                            "title": {
+                                "es": "AP-Tela",
+                                "en": "AP-Tela",
+                                "pt": "AP-Tela"
+                            },
+                            "subtitle": {
+                                "es": "Una empresa especializada en la fabricación de piezas largas, soldadas con simetria axial. Como sigue: Tubos, cilindros y conos de acero pesados, soldados y de paredes gruesas. Rodillos para industrias de papel, energía y equipos de elevación.",
+                                "en": "A company specializing in the manufacture of long, axially symmetrical welded parts. As follows: Heavy, welded, thick-walled steel tubes, cylinders and cones. Rollers for the paper, energy and lifting equipment industries.",
+                                "pt": "Empresa especializada na fabricação de peças longas, soldadas com simetria axial. Como segue: Tubos, cilindros e cones de aço pesados, soldados e de paredes espessas. Rolos para indústrias de papel, energia e equipamentos de elevação."
                             }
                         },
                     ]
@@ -236,9 +288,9 @@ function write(text, lang) {
                                 "pt": "Suntex"
                             },
                             "subtitle": {
-                                "es": "Productos AntiStickie.",
-                                "en": "Antistickie products.",
-                                "pt": "Produtos AntiStickie."
+                                "es": "Producto muy eficaz para controlar adhesivos y ceras de parafina, llamados stickies, de forma revolucionaria y mantener limpia la máquina papelera. Stickie es un problema creciente en la fabricación de papel.",
+                                "en": "Highly effective product to control adhesives and paraffin waxes, called stickies, in a revolutionary way and keep the paper machine clean. Stickie is a growing problem in paper manufacturing.",
+                                "pt": "Produto muito eficaz para controlar adesivos e parafinas, chamados stickies, de forma revolucionária e manter a máquina de papel limpa. Stickie é um problema crescente na fabricação de papel."
                             },
                         }
                     ]
@@ -280,9 +332,9 @@ function write(text, lang) {
                                 "pt": "Runtech"
                                 },
                             "subtitle": {
-                                "es": "Auditorias especializadas de molinos.",
-                                "en": "Specialized Mill Audits.",
-                                "pt": "Auditorias especializadas de moinhos."
+                                "es": "Soluciones industriales disruptivas en áreas de vacío, enhebrado de hoja, estabilización de la hoja en la primera batería y deshidratación en las prensas.",
+                                "en": "Disruptive industrial solutions in the areas of vacuum, sheet threading, sheet stabilization in the first battery and dehydration in the presses.",
+                                "pt": "Soluções industriais disruptivas nas áreas de vácuo, rosqueamento de chapas, estabilização de chapas na primeira bateria e desidratação nas prensas."
                                 },
                         },
                         {
@@ -293,9 +345,9 @@ function write(text, lang) {
                                 "pt": "PR Rolls"
                                 },
                             "subtitle": {
-                                "es": "Servicios &#34;in situ - on site&#34; de rectificado, revestimiento y balanceo de rodillos.",
-                                "en": "&#34;on site&#34; grinding, coating and roller balancing services",
-                                "pt": "Serviços &#34;in situ - on site&#34; de retificação, revestimento e balanceamento de rodillos."
+                                "es": "Empresa especializada en servicios \"in situ - on sit\" de rectificado, revestimiento y balanceo de rodillos de todo tipo de máquinas papeleras y reparación de piezas grandes en astilleros, acerías, industria pesada en general.",
+                                "en": "Company specialized in \"on site\" grinding, coating and balancing of rollers of all types of paper machines and repair of large parts in shipyards, steel mills, heavy industry in general.",
+                                "pt": "Empresa especializada em serviços “in situ - on site” de retificação, revestimento e balanceamento de rolos de todos os tipos de máquinas de papel e reparo de peças de grande porte em estaleiros, siderúrgicas, indústria pesada em geral."
                                 },
                         },
                         {
@@ -431,6 +483,22 @@ function write(text, lang) {
             "latampaper": {
                 "link": "#",
                 "img": "latampaper.png"
+            },
+            "bvg": {
+                "link": "/articles/bvg",
+                "img": "bvg.png"
+            },
+            "fmw": {
+                "link": "/articles/fmw",
+                "img": "fmw.png"
+            },
+            "moveroll": {
+                "link": "/articles/moveroll",
+                "img": "moveroll.png"
+            },
+            "ap_tela": {
+                "link": "/articles/ap-tela",
+                "img": "ap-tela.png"
             }
         }
     };
@@ -533,7 +601,7 @@ function writeSubMenu(menuData, idioma){
                     html += `
                             <a class="tecno" href="${linkData.link}">
                                 <h1>${item.title[idioma]}</h1>
-                                <span>${item.subtitle[idioma]}</span>
+                                <p>${item.subtitle[idioma]}</p>
                                 <div class="image"> <img src="..\/img\/${linkData.img}" alt="${item.title[idioma]}"></div>
                             </a>
                     `;

@@ -66,7 +66,8 @@ input[type="checkbox"], nav input[type="checkbox"] {appearance: none;border:none
 .pt {background-image: url(../img/pt.svg);}
 
 
-.sub {display: none;position: absolute;top: 3rem;width: 100%;background-color: #FFFFFF;justify-content: space-evenly;border: 2.3px solid #173E00;border-radius: 7px;transition: display 0.5s;padding: .2rem;box-sizing: border-box;min-height: 25rem;}
+.sub {display: none;position: absolute;top: 3rem;width: 90vw;background-color: #FFFFFF;justify-content: space-evenly;border: 2.3px solid #173E00;border-radius: 7px;transition: display 0.5s;padding: .2rem;box-sizing: border-box;min-height: 30rem;}
+.menu-solutions {width: 100%;}
 .sub div {box-sizing:border-box;}
 
 /* width */
@@ -112,28 +113,29 @@ a.item-tecnologies:hover {background-color: #173E00;color: #F2DA5E;background-im
 .group-items div:hover {display: block;}
 .group-items>div:first-child {display: inline-block;}
 
-.tecno {display: grid; grid-gap: 10px; height: 8rem ; padding: 1rem; margin-right: 0; text-align: left; align-items: center; justify-content: stretch; align-content: space-evenly; justify-items: baseline; width: 100%;}
+.tecno {display: flex; height: 9rem; padding: 1rem; text-align: left; align-items: flex-start; justify-content: space-between; width: 100%; position: relative; flex-direction: column;border-bottom: 1px solid #dfdfdf;}
 .tecno:hover {background-color: rgba(255, 255, 255, 0.22);box-shadow:  0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);color:#173E00;}
 
-.tecno h1 {grid-column: 1 / 3;grid-row: 1;font-size: 1.3rem;}
-.tecno span{ grid-column: 1 / 3; grid-row: 2 / 2;font-weight: 400;line-height: 1.2;font-size: 1rem;}
-.tecno .image {grid-column: 3 / 3; grid-row: 1 / 3; max-width: 100%; max-height: 5rem; display: grid; align-content: center; justify-content: center; align-items: center; justify-items: center;}
-.image img {max-width: 15rem; max-height: 7rem; display: grid; align-items: center; justify-content: center; align-content: center; justify-items: center;}
+.tecno h1 {grid-column: 1 / 3;grid-row: 1;font-size: 1.3rem;height: 3rem;}
+.tecno p{ grid-column: 1 / 3; grid-row: 2 / 2;font-weight: 400;line-height: 1.2;font-size: 1rem;}
+.tecno .image {position: absolute; top: 0; right: 0;height: 3rem;}
+.image img {max-width: 15rem; max-height: 3rem; display: grid; margin: .7rem .4rem 0; align-items: center; justify-content: center; align-content: center; justify-items: center;}
 .image:hover, .image img:hover {display:grid !important;}
 
 .sub:hover {display: block;}
 
-.container {width: 80rem;max-width:100%;margin: 0 auto;}
+.container {width: 100%;max-width:80rem;margin: 0 auto;padding: 1rem;}
 .home {display: flex;flex-direction: column;align-items: center;margin-top: 3rem;line-height: 3rem;text-align: center;padding: 1rem;box-sizing: border-box;}
 .hero h1{font-size: 4.5rem;font-weight: 700;line-height: 1;}
 .hero h2{font-size: 2.1rem;font-weight: 700;margin: 1rem 0;}
 .hero h3{font-size: 1.2rem;font-weight: 600;margin: .5rem 0;}
 .hero p {font-size: 1.3rem;text-transform: uppercase;max-width: 70%;text-align: center;font-weight: 500;line-height: 2rem;margin: 1rem auto;}
 
-.presentation-about {width: 100%;max-width: 60rem;display: flex;flex-direction: row;justify-content: space-around;margin: 0 auto 4rem;}
-.presentation-about div {display: flex;flex-direction: column;width: 100%;max-height: 15rem;justify-content: flex-end}
+.presentation-about {width: 100%;max-width: 60rem;display: flex;flex-direction: row;justify-content: space-around;align-items: flex-end;}
+.presentation-about div {display: flex;flex-direction: column;width: 100%;max-height: 15rem;height: 100%;justify-content: flex-end;align-items: flex-start;padding-left: 1rem;}
+.presentation-about div:first-child {align-items: flex-end;padding: 0;}
 .presentation-about div>span {font-size: 3rem;font-weight: 700;text-align: end;margin: .7rem 0 -.35rem;}
-.presentation-about div img {width: 100%;max-height: 12rem;margin-left: -5rem;}
+.presentation-about div img {max-height: 12rem;height: auto; width: 100%;}
 
 .about-us {font-size: 1.4rem;}
 
@@ -146,17 +148,17 @@ article ul {padding-left: 1rem;margin: 0 1rem;line-height: 1.5;}
 article li {display: list-item;list-style: outside;}
 /*article strong {} */
 
-.contact { max-width: 60rem;display: flex;flex-direction: column;margin: 2rem auto;}
+.contact {width: 100%; max-width: 60rem;display: flex;flex-direction: column;margin: 2rem auto;}
 .info-address {width: 100%;display: flex;flex-direction: row;}
-.info-address>div {display: flex;flex-direction: column;width: 50%;padding: 1rem;}
-.info-address>div>h4 {width: 12rem; margin: 0 auto;}
+.info-address>div {display: flex;flex-direction: column;width: 50%;padding: 1rem;font-weight: 550;}
+.contact h4 {width: 12rem; margin: 0 auto;}
 .address {display:flex;flex-direction: row;width: 100%;min-height: 10rem;align-items: center;margin-bottom: 2rem;}
 .address img {max-width: 30%;margin-bottom: 3rem;}
 .address>div {min-height: 10rem;display: flex;flex-direction: column;padding-left: 1.5rem;line-height: 1.5;}
 
 .img-content {width: 50%;}
 .img-content img {border-radius: 10px;width: 100%;}
-.contact form {display: flex; flex-direction: column;max-width: 50%;min-height: 50rem;justify-content: baseline;}
+.contact form {display: flex; flex-direction: column;max-width: 50%;justify-content: baseline;}
 .contact form label {font-weight: 550;margin: .5rem 0;}
 .contact form input {padding: 1rem;margin-bottom: 1rem;font-size: 1.2rem;border-radius: .6rem;border:0.8px solid #eee;}
 .contact form textarea {font-size: 1.2rem;padding: 1rem; resize: none;margin-bottom: 1rem;border-radius: .6rem;border:0.8px solid #eee;}
@@ -164,14 +166,8 @@ article li {display: list-item;list-style: outside;}
 .contact form button:hover {background-color: #173E00;color: #F2DA5E;cursor: pointer;}
 
 @media screen and (max-width: 1100px) {
-    html {font-size: 14px;}/*
-    nav a, nav label { font-size: .9rem; padding: 1rem; }
-    .flag {width: 1rem; height: .4rem;}
-    .logo {width: 5.5rem; height: 4rem;}
-    .lang-cont {right:.2rem;box-sizing: border-box;}
-    .group-items>a{font-size: .8rem;height: 3rem;}
-
-*/
+    html {font-size: 14px;}
+    .info-address {flex-direction: column;}
   }
 @media screen and (max-width: 765px) {
     html {font-size: 13px;}
@@ -200,4 +196,12 @@ article li {display: list-item;list-style: outside;}
 
     .lang-cont {display: none;position: relative;bottom: 0;top:1rem;justify-content: center;align-items: center;}
     .flag {width: 2.1rem; height: 1rem;}
+    .hero h1 {font-size: 3.5rem;width: 100%;}
+    .hero p { font-size: 1.2rem;margin: 1rem auto;padding: 1rem;}
+    .contact form {max-width: 100%;}
+    .info-address > div {width: 100%;}
+    .presentation-about {flex-direction: column;}
+    .presentation-about div>span {font-size: 2.5rem;}
+
+    .presentation-about div:first-child {align-items: center; padding: 0; }
 }
