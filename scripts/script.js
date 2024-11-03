@@ -417,67 +417,67 @@ function write(text, lang) {
         ],
         "links": {
             "runtech": {
-                "link": "/articles/runtech",
+                "link": "/tecnologies/runtech",
                 "img": "runtech.png"
             },
             "qualifiber": {
-                "link": "/articles/qualifiber",
+                "link": "/tecnologies/qualifiber",
                 "img": "qualifiber.png"
             },
             "pesint": {
-                "link": "/articles/pesint",
+                "link": "/tecnologies/pesint",
                 "img": "pesint.png"
             },
             "aurelia": {
-                "link": "/articles/aurelia",
+                "link": "/tecnologies/aurelia",
                 "img": "aurelia.png"
             },
             "sensorik": {
-                "link": "/articles/sensorik",
+                "link": "/tecnologies/sensorik",
                 "img": "sensorik.png"
             },
             "wetend": {
-                "link": "/articles/wetend",
+                "link": "/tecnologies/wetend",
                 "img": "wetend.png"      
             },
             "suntex": {
-                "link": "/articles/suntex",
+                "link": "/tecnologies/suntex",
                 "img": "suntex.png"      
             },
             "lattina": {
-                "link": "/articles/lattina",
+                "link": "/tecnologies/lattina",
                 "img": "lattina.png"      
             },
             "prrolls": {
-                "link": "/articles/prrolls",
+                "link": "/tecnologies/prrolls",
                 "img": "prrolls.png"      
             },
             "tecnomeca": {
-                "link": "/articles/tecnomeca",
+                "link": "/tecnologies/tecnomeca",
                 "img": "tecnomeca.png"      
             },
             "hergen": {
-                "link": "/articles/hergen",
+                "link": "/tecnologies/hergen",
                 "img": "hergen.png"
             },
             "projet": {
-                "link": "/articles/projet-bv",
+                "link": "/tecnologies/projet-bv",
                 "img": "projet.png"
             },
             "tasowheel": {
-                "link": "/articles/tasowheel",
+                "link": "/tecnologies/tasowheel",
                 "img": "tashowheel.png"
             },
             "orloga": {
-                "link": "/articles/orloga",
+                "link": "/tecnologies/orloga",
                 "img": "orloga.png"
             },
             "tm-systems": {
-                "link": "/articles/tm-systems",
+                "link": "/tecnologies/tm-systems",
                 "img": "tym-systems.png"
             },
             "malflo": {
-                "link": "/articles/malflo",
+                "link": "/tecnologies/malflo",
                 "img": "malflo.png"
             },
             "latampaper": {
@@ -485,19 +485,19 @@ function write(text, lang) {
                 "img": "latampaper.png"
             },
             "bvg": {
-                "link": "/articles/bvg",
+                "link": "/tecnologies/bvg",
                 "img": "bvg.png"
             },
             "fmw": {
-                "link": "/articles/fmw",
+                "link": "/tecnologies/fmw",
                 "img": "fmw.png"
             },
             "moveroll": {
-                "link": "/articles/moveroll",
+                "link": "/tecnologies/moveroll",
                 "img": "moveroll.png"
             },
             "ap_tela": {
-                "link": "/articles/ap-tela",
+                "link": "/tecnologies/ap-tela",
                 "img": "ap-tela.png"
             }
         }
