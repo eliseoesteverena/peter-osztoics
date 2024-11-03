@@ -131,7 +131,7 @@ a.item-tecnologies:hover {background-color: #173E00;color: #F2DA5E;background-im
 .hero h3{font-size: 1.2rem;font-weight: 600;margin: .5rem 0;}
 .hero p {font-size: 1.3rem;text-transform: uppercase;max-width: 70%;text-align: center;font-weight: 500;line-height: 2rem;margin: 1rem auto;}
 
-.presentation-about {width: 100%;max-width: 60rem;display: flex;flex-direction: row;justify-content: space-around;align-items: flex-end;}
+.presentation-about {width: 100%;max-width: 60rem;display: flex;flex-direction: row;justify-content: space-around;align-items: flex-end;margin: 0 auto;}
 .presentation-about div {display: flex;flex-direction: column;width: 100%;max-height: 15rem;height: 100%;justify-content: flex-end;align-items: flex-start;padding-left: 1rem;}
 .presentation-about div:first-child {align-items: flex-end;padding: 0;}
 .presentation-about div>span {font-size: 3rem;font-weight: 700;text-align: end;margin: .7rem 0 -.35rem;}
@@ -141,13 +141,14 @@ a.item-tecnologies:hover {background-color: #173E00;color: #F2DA5E;background-im
 .about>section {display: flex;flex-direction: column; align-items: center;}
 
 article {max-width: 40rem;width: 100%;padding: 1rem;margin: 2rem auto;line-height: 1.3;font-size: 1.2rem;font-weight: 450;box-sizing: border-box;}
-/*article p {margin-bottom: .8rem;margin: 1rem 0;}
-article h1 {font-size: 2.5rem;font-weight: 700; margin: 1.5rem 0;}
-article h2 {font-size: 1.5rem;font-weight: 700;margin-top: 1.4rem;}
-article h3 {font-weight: 600;}*/
 article ul {padding-left: 1rem;margin: 0 1rem;line-height: 1.5;}
 article li {display: list-item;list-style: outside;}
-/*article strong {} */
+article details {border: 0;margin: 1rem 0;font-weight: 600;padding: .5rem;background: rgb(88,239,0);background: linear-gradient(90deg, rgba(88,239,0,1) 10%, rgba(208,255,180,1) 75%);border-radius: 20px;}
+article details summary {cursor: pointer;margin: .5rem;}
+article iframe {width: 100%;border: none;min-height: 30rem;border-radius: 10px;}
+article figure {width: 100%;margin: .8rem auto;}
+article figure img {width: 100%;max-width: 60rem;border-radius: 15px;}
+article figure figcaption {width: 100%;font-size: .8rem;font-style: italic;text-align: center;}
 
 .contact {width: 100%; max-width: 60rem;display: flex;flex-direction: column;margin: 2rem auto;}
 .info-address {width: 100%;display: flex;flex-direction: row;}
