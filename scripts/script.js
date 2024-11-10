@@ -3,6 +3,7 @@ const $header = document.querySelector("#header"),
 var langSet = localStorage.getItem("lang");
 
 setLang(langSet)
+
 function setLang(language) {
     localStorage.removeItem("lang");// remueve 
 
@@ -14,18 +15,22 @@ function setLang(language) {
     if(langSet.indexOf('en') !== -1){
         writeTemplate("en");
         $container.innerHTML = langContent.en;
+        footerArticle(language)
     }
     else if(langSet.indexOf('pt') !== -1){
         writeTemplate("pt");
         $container.innerHTML = langContent.pt;
+        footerArticle(language)
     }
     else if(langSet.indexOf('es') !== -1){
         writeTemplate("es");
         $container.innerHTML = langContent.es;
+        footerArticle(language)
     } 
 	else {
         writeTemplate("en");
         $container.innerHTML = langContent.en;
+        footerArticle(language)
 	}
 	
 }
@@ -70,6 +75,8 @@ function writeTemplate(language) {
 }
 
 function write(text, lang) {
+    let dom = document.getElementsByTagName("html");
+    dom[0].setAttribute("lang", lang);
     let data = {
         "tecnologies_items": [
             {
@@ -508,10 +515,11 @@ function write(text, lang) {
         <a class="logo" href="/">&nbsp;</a>
         <button id="openMenu" class="open-menu" onclick="openMenu('nav')">&#32;</button>
             <nav id="nav" class="nav"> 
-                <a id="itemSolutions" class="item-solutions with-sub" onclick="openMenu('solutions')" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</a>
+                <a href="solutions">${text[i]['solutions']}</a>
+                <!--a id="itemSolutions" class="item-solutions with-sub" onclick="openMenu('solutions')" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</a>
                     <div class="sub menu-solutions" id="menuSolutions">
                         <i>Soluciones ...</i>
-                    </div>
+                    </div-->
                 <!--- -->
                 <a class="item-tecnologies with-sub" for="itemTecnologies${i}" onclick="openMenu('tecnologies')">${text[i]['tecnologies']}&nbsp;&nbsp;</a>`;
 
@@ -584,6 +592,7 @@ function openMenu(clase) {
 function writeSubMenu(menuData, idioma){
     let html = '<div class="group-items">';
 
+    let empresas = []
     // Iterar sobre las propiedades de nivel superior de menuData (como "tecnologies_items")
     Object.keys(menuData).forEach(propiedad => {
         let grupoArray = menuData[propiedad]; // Puede ser un array o un objeto
@@ -605,6 +614,8 @@ function writeSubMenu(menuData, idioma){
                                 <div class="image"> <img src="..\/img\/${linkData.img}" alt="${item.title[idioma]}"></div>
                             </a>
                     `;
+                    
+                    empresas.push(item.title[idioma]);
                 });
                 
                 html += '</div>';
@@ -613,5 +624,31 @@ function writeSubMenu(menuData, idioma){
     }
     });
     html += `</div>`;
+    console.log(empresas);
     return html;
+}
+
+function footerArticle(lang) {
+    let html = ``;
+    const container = document.getElementById("container")
+    const article = container.getElementsByTagName("article");
+    console.log(article)
+    let footer = document.createElement("section");
+    footer.classList.add("msg-article");
+
+    switch(lang){
+        case "es":
+            html = `<p>¿Te gustaría conocer más de la tecnología de <strong>${langContent.empresa}</strong> o cómo incorporarla a tu empresa?</p><a href="../contact.html">Contáctanos</a>`;
+            break;
+        case "en":
+            html = `<p>Would you like to learn more about <strong>${langContent.empresa}</strong> technology or how to incorporate it into your company?</p><a href="../contact.html">Contact us</a>`;
+            break;
+        case "pt":
+            html = `<p>Gostaria de saber mais sobre a tecnologia <strong>${langContent.empresa}</strong> ou como incorporá-la à sua empresa?</p><a href="../contact.html">Contate-nos</a>`;
+            break;
+    }
+    footer.innerHTML = html;
+    if(article !== null){
+        article[0].appendChild(footer); 
+    }
 }

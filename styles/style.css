@@ -27,6 +27,7 @@ div {box-sizing: border-box;}
 header { margin: 0; padding: 0; height: 5rem;margin-top: 4px; align-items: center; display: flex;padding-bottom: 0.2rem;}
 
 a { text-decoration: none; }
+.container {margin-top: 2rem;}
 
 .container p {margin-bottom: .8rem;margin: 1rem 0;}
 
@@ -150,7 +151,13 @@ article figure {width: 100%;margin: .8rem auto;}
 article figure img {width: 100%;max-width: 60rem;border-radius: 15px;}
 article figure figcaption {width: 100%;font-size: .8rem;font-style: italic;text-align: center;}
 
-.contact {width: 100%; max-width: 60rem;display: flex;flex-direction: column;margin: 2rem auto;}
+article .msg-article {padding: 1rem 1.2rem; border-radius: 15px;color: #173E00;border:2px solid #173E00;line-height: 1.4;display: flex;align-items: center;justify-content: space-between;margin: 1rem 0;}
+article .msg-article strong {font-weight: 700;}
+article .msg-article p{margin: 0;width: 72%;}
+article .msg-article a {font-size: 1.2rem;background-color: #173E00;font-weight: 600;border: 2px solid transparent;border-radius: .6rem;border-radius: .6rem;padding: 1rem;color:#F2DA5E;}
+article .msg-article a:hover {background-color:#0D2400;color:#F2EB5E;}
+
+.contact {width: 100%; max-width: 60rem;display: flex;flex-direction: column;margin: 5rem auto;}
 .info-address {width: 100%;display: flex;flex-direction: row;}
 .info-address>div {display: flex;flex-direction: column;width: 50%;padding: 1rem;font-weight: 550;}
 .contact h4 {width: 12rem; margin: 0 auto;}
@@ -173,7 +180,7 @@ article figure figcaption {width: 100%;font-size: .8rem;font-style: italic;text-
   }
 @media screen and (max-width: 765px) {
     html {font-size: 13px;}
-    header {width: 100%;top:0;box-sizing: border-box;}
+    header {width: 100%;top:0;box-sizing: border-box;position: absolute;}
     header, nav{ display: inline-block; text-align: right; right: 0;box-sizing: border-box;}
     .logo {z-index: 2;position: absolute;}
     /*.int-header {width: 100%;margin: 0;border-radius:0; position: absolute;display: block;height: 100vh;z-index: 1;padding: 0;}*/
@@ -196,7 +203,7 @@ article figure figcaption {width: 100%;font-size: .8rem;font-style: italic;text-
     .group-items img {max-width: 8rem;}
     .group-view {width: 100%;display: none;position: relative;text-align: left;}
 
-    .lang-cont {display: none;position: relative;bottom: 0;top:1rem;justify-content: center;align-items: center;}
+    .lang-cont {display: none;position: relative;bottom: 0;top:auto;right:auto;padding: .8rem;justify-content: center;align-items: center;}
     .flag {width: 2.1rem; height: 1rem;}
     .hero h1 {font-size: 3.5rem;width: 100%;}
     .hero p { font-size: 1.2rem;margin: 1rem auto;padding: 1rem;}
