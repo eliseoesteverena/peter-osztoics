@@ -629,6 +629,9 @@ function writeSubMenu(menuData, idioma){
 }
 
 function footerArticle(lang) {
+    const invalidatePages = ["/contact", "/contact.html", "/about-us", "/about-us.html"];
+    let pageActual = window.location.pathname;
+
     let html = ``;
     const container = document.getElementById("container")
     const article = container.getElementsByTagName("article");
@@ -648,7 +651,7 @@ function footerArticle(lang) {
             break;
     }
     footer.innerHTML = html;
-    if(article !== null){
+    if(article !== null && !invalidatePages.includes(pageActual)){
         article[0].appendChild(footer); 
     }
 }
