@@ -653,5 +653,8 @@ function footerArticle(lang) {
     footer.innerHTML = html;
     if(article !== null && !invalidatePages.includes(pageActual)){
         article[0].appendChild(footer); 
+        let title = article[0].getElementsByTagName("h1");
+        let span = document.createElement("span");
+        title.after(span)
     }
 }
