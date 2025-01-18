@@ -532,9 +532,9 @@ function write(text, lang) {
             <div class="lang-cont">
                 <a class="openLangs">&nbsp;</a>
                     <div class="flags">
-                        <a class="flag en" id="langEn" onclick="setLang('en');">&nbsp;</a>
-                        <a class="flag es" id="langEs" onclick="setLang('es');">&nbsp;</a>
-                        <a class="flag pt" id="langPt" onclick="setLang('pt');">&nbsp;</a>
+                        <a id="langEn" onclick="setLang('en');"><img class="flag en" src="../img/gb.svg"></a>
+                        <a id="langEs" onclick="setLang('es');"><img class="flag es" src="../img/es.svg"></a>
+                        <a id="langPt" onclick="setLang('pt');"><img class="flag pt" src="../img/pt.svg"></a>
                     </div>
             </div>`
     }
