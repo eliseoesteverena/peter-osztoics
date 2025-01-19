@@ -2,6 +2,10 @@ const $header = document.querySelector("#header"),
       $container = document.querySelector("#container");
 var langSet = localStorage.getItem("lang");
 
+//Comportamiento Menu:
+let viewport = window.innerWidth;
+let otherElements = document.querySelectorAll(".container");
+
 setLang(langSet)
 
 function setLang(language) {
@@ -10,8 +14,12 @@ function setLang(language) {
     localStorage.setItem("lang", language); // establece el lenguaje recibido
 
     let langSet = localStorage.getItem("lang");
-    console.log(langSet)
-    
+
+    //Correguir efecto blur si es necesario:
+    otherElements.forEach(element => {
+        element.classList.remove("with-blur")
+    });
+
     if(langSet.indexOf('en') !== -1){
         writeTemplate("en");
         $container.innerHTML = langContent.en;
@@ -75,6 +83,7 @@ function writeTemplate(language) {
     else if(language.indexOf('pt') !== -1) { let pt = dataJson["pt"]; $header.innerHTML = write(pt, "pt") } // portugues aún no establecido
     else if(language.indexOf('en') !== -1) { let en = dataJson["en"]; $header.innerHTML = write(en, "en")}
     else { let es = dataJson["es"]; $header.innerHTML = write(es, "es") }
+
 }
 
 function write(text, lang) {
@@ -535,7 +544,7 @@ function write(text, lang) {
             <div class="lang-cont">
             <span class="select-lang-txt">${text[i]['selectLang']}</span>
                 <a class="openLangs">&nbsp;</a>
-                    <div class="flags">
+                    <div class="flags" id="flags">
                         <a id="langEn" onclick="setLang('en');"><img class="flag en" src="../img/gb.svg"></a>
                         <a id="langEs" onclick="setLang('es');"><img class="flag es" src="../img/es.svg"></a>
                         <a id="langPt" onclick="setLang('pt');"><img class="flag pt" src="../img/pt.svg"></a>
@@ -555,16 +564,12 @@ function openMenu(clase) {
     let solutions = document.getElementById("menuSolutions");
     let tecnologies = document.getElementById("menuTecnologies");
 
-    let viewport = window.innerWidth;
-    let otherElements = document.querySelectorAll(".container");
-
     switch (clase) {
         case "nav":
             let nav = document.getElementById("nav");
             
-            if(viewport < 500) {
-                otherElements.forEach(blurElements);
-            }
+            otherElements.forEach(blurElements);
+            
 
             let navClassList = nav.classList;
             navClassList.toggle("active");
@@ -641,7 +646,7 @@ function writeSubMenu(menuData, idioma){
 }
 
 function footerArticle(lang) {
-    const invalidatePages = ["/contact", "/contact.html", "/about-us", "/about-us.html"];
+    const invalidatePages = ["/contact", "/contact.html", "/about-us", "/about-us.html", "/solutions", "/solutions.html"];
     let pageActual = window.location.pathname;
 
     let html = ``;
@@ -672,5 +677,8 @@ function footerArticle(lang) {
 }
 
 function blurElements(element, index, array){
-    element.classList.toggle("with-blur")
+    if(viewport < 500) {
+        element.classList.toggle("with-blur")
+    }
 }
+
