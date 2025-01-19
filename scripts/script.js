@@ -43,7 +43,8 @@ function writeTemplate(language) {
                 "tecnologies" : "Tecnologias",
                 "about_us": "Acerca de",
                 "contact" : "Contacto",
-                "blog" : "Blog"
+                "blog" : "Blog",
+                "selectLang" : "Selecciona tu idioma: "
             }
         ],
         "en": [
@@ -53,7 +54,8 @@ function writeTemplate(language) {
                 "tecnologies" : "Tecnologies",
                 "about_us": "About Us",
                 "contact" : "Contact",
-                "blog" : "Blog"
+                "blog" : "Blog",
+                "selectLang" : "Select your language: "
             }
         ],
         "pt": [
@@ -63,7 +65,8 @@ function writeTemplate(language) {
               "tecnologies" : "Tecnologias",
               "about_us": "Sobre",
               "contact" : "Contato",
-              "blog" : "Blog"
+              "blog" : "Blog",
+              "selectLang" : "Selecione seu idioma: "
             }
         ]
     };
@@ -530,6 +533,7 @@ function write(text, lang) {
                 <a href="/contact.html"><span>${text[i]['contact']}</span></a>
             </nav>
             <div class="lang-cont">
+            <span class="select-lang-txt">${text[i]['selectLang']}</span>
                 <a class="openLangs">&nbsp;</a>
                     <div class="flags">
                         <a id="langEn" onclick="setLang('en');"><img class="flag en" src="../img/gb.svg"></a>
@@ -551,9 +555,17 @@ function openMenu(clase) {
     let solutions = document.getElementById("menuSolutions");
     let tecnologies = document.getElementById("menuTecnologies");
 
+    let viewport = window.innerWidth;
+    let otherElements = document.querySelectorAll(".container");
+
     switch (clase) {
         case "nav":
             let nav = document.getElementById("nav");
+            
+            if(viewport < 500) {
+                otherElements.forEach(blurElements);
+            }
+
             let navClassList = nav.classList;
             navClassList.toggle("active");
             
@@ -657,4 +669,8 @@ function footerArticle(lang) {
         let span = document.createElement("span");
         title.after(span)
     }
+}
+
+function blurElements(element, index, array){
+    element.classList.toggle("with-blur")
 }
