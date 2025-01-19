@@ -527,7 +527,7 @@ function write(text, lang) {
         <a class="logo" href="/">&nbsp;</a>
         <button id="openMenu" class="open-menu" onclick="openMenu('nav')">&#32;</button>
             <nav id="nav" class="nav"> 
-                <a href="./solutions">${text[i]['solutions']}</a>
+                <a href="../solutions">${text[i]['solutions']}</a>
                 <!--a id="itemSolutions" class="item-solutions with-sub" onclick="openMenu('solutions')" for="itemSolutions${i}">${text[i]['solutions']}&nbsp;&nbsp;</a>
                     <div class="sub menu-solutions" id="menuSolutions">
                         <i>Soluciones ...</i>
