@@ -54,7 +54,7 @@ nav a, nav label, .int-header {
 input[type="checkbox"], nav input[type="checkbox"] {appearance: none;border:none;padding: 0; margin:0;}
 
 .lang-cont {
-    position: absolute;right: 1rem;
+    position: absolute;right: 1rem;z-index:9999;
 }
 .langContent {
     display: none; padding: 1rem;z-index: 999;
