@@ -173,18 +173,19 @@ function writeSubMenu(menuData, idioma){
     }
     });
     html += `</div>`;
-    console.log(empresas);
+   // console.log(empresas);
     return html;
 }
 
 function footerArticle(lang) {
-    const invalidatePages = ["/contact", "/contact.html", "/about-us", "/about-us.html", "/solutions", "/solutions.html"];
+    const invalidatePages = ["/index", "/index.html", "/contact", "/contact.html", "/about-us", "/about-us.html", "/solutions", "/solutions.html"];
     let pageActual = window.location.pathname;
 
     let message = ``;
     const container = document.getElementById("container")
     const article = container.getElementsByTagName("article");
-    console.log(article)
+
+    if(article !== null && !invalidatePages.includes(pageActual)){
     let footer = document.createElement("section");
     footer.classList.add("msg-article");
 
@@ -200,7 +201,7 @@ function footerArticle(lang) {
             break;
     }
     footer.innerHTML = message;
-    console.log(message)
+    
     let webpage = "";
     let country = "";
     let grupEmpresas = empresas.links;
@@ -237,7 +238,7 @@ console.log(webpage)
                         </header>
                         `;
 
-    if(article !== null && !invalidatePages.includes(pageActual)){
+    
         article[0].appendChild(footer); 
         let content = article[0].innerHTML
         const modifiedContent = content.replace(
@@ -249,8 +250,46 @@ console.log(webpage)
 }
 
 function blurElements(element, index, array){
-    if(viewport < 500) {
+    if(viewport < 765) {
         element.classList.toggle("with-blur")
     }
 }
+
+function agruparPorCategoriaPlano(datos) {
+    // Crear un mapa para las categorías
+    const categorias = new Map();
+    datos.forEach(item => {
+        if (item.parent_id === null) {
+            // Agregar categorías al mapa con un array vacío para ítems
+            categorias.set(item.id, { ...item, items: [] });
+        }
+    });
+
+    // Asociar los ítems a sus categorías
+    datos.forEach(item => {
+        if (item.parent_id !== null && categorias.has(item.parent_id)) {
+            categorias.get(item.parent_id).items.push(item);
+        }
+    });
+
+    // Convertir el mapa a un array
+    return Array.from(categorias.values());
+}
+
+// Procesar datos agrupados sin ciclos anidados
+function procesarCategoriasPlano(datos) {
+    datos.forEach(categoria => {
+        console.log(`Comenzando a iterar en la categoría: ${categoria.title.es}`);
+        
+        categoria.items.forEach(item => {
+            console.log(`Procesando ítem: ${item.title.es}`);
+        });
+
+        console.log(`Terminando de iterar en la categoría: ${categoria.title.es}`);
+    });
+}
+
+// Ejemplo de uso
+const datosAgrupados = agruparPorCategoriaPlano(empresas2);
+procesarCategoriasPlano(datosAgrupados);
 

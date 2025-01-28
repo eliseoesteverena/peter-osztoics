@@ -226,14 +226,21 @@ article .header-article>div a>svg:first-child {scale:1.4;}
     .hero p { font-size: 1.2rem;margin: 1rem auto;padding: 1rem;}
     .contact form {max-width: 100%;}
     .info-address > div {width: 100%;}
-    .presentation-about {flex-direction: column;}
-    .presentation-about div>span {font-size: 2.5rem;}
+    .about-us {margin-top:  5rem;}
+    .presentation-about {flex-direction: row;}
+    .presentation-about div>span {font-size: 2.3rem;}
+    .presentation-about div>img{max-height: 10rem;}
+    .presentation-about div:first-child {align-items: end; padding: 0; }
     .contact .row {flex-direction: column;}
     .contact .row>* {width: 100%;}
     .address .grid {font-size: 1rem;display: flex;flex-direction: column;}
     .contact .row>div:not(:first-child) {max-height: 150px;}
-    .presentation-about div:first-child {align-items: center; padding: 0; }
 
     article .header-article>div a {min-width: 80%;}
     article .header-article>div a>svg:first-child {scale: 1.2; }
+}
+@media screen and (max-width: 765px) {
+    .presentation-about div>span {font-size: 1.8rem;}
+    .presentation-about div>img{max-height: 7rem;}
+
 }
