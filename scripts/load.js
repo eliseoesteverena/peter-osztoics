@@ -20,24 +20,26 @@ async function setLang(language) {
     });
 
     if(langSet.indexOf('en') !== -1){
-        let respuesta = await writeHeaderPage("en");
+        $header.innerHTML = await writeHeaderPage("en");
         $container.innerHTML = langContent.en;
-        await addToArticles(language)
+        validatePages(language)
     }
     else if(langSet.indexOf('pt') !== -1){
         $header.innerHTML = await writeHeaderPage("pt");
         $container.innerHTML = langContent.pt;
-        await addToArticles(language)
+        validatePages(language)
     }
     else if(langSet.indexOf('es') !== -1){
         $header.innerHTML = await writeHeaderPage("es");
         $container.innerHTML = langContent.es;
-        await addToArticles(language)
+        validatePages(language)
     } 
-	else { // Default
+	else { // Default English
+        let language = "en";
+        localStorage.setItem("lang", language);
         $header.innerHTML = await writeHeaderPage("en");
         $container.innerHTML = langContent.en;
-        await addToArticles(language)
+        validatePages(language)
 	}
 	
 }

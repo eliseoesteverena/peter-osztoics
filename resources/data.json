@@ -7,7 +7,7 @@
             "en": "Solutions",
             "pt": "Soluções"
         },
-        "link": "./solutions",
+        "link": "../solutions",
         "parent_id": null,
         "type": "link"
     },
@@ -29,7 +29,7 @@
             "en": "About Us",
             "pt": "Sobre"
         },
-        "link": "./about-us",
+        "link": "../about-us",
         "parent_id": null,
         "type": "link"
     },
@@ -40,7 +40,7 @@
             "en": "Contact",
             "pt":"Contato"
         },
-        "link": "./contact",
+        "link": "../contact",
         "parent_id": null,
         "type": "link"
     },
@@ -571,5 +571,16 @@
         "webpage": "https://www.orloga.com/",
          "country": "España"
     }
+    ],
+    "others" : [
+        {
+            "id": "message",
+            "content": {
+                 "es": "<p>¿Te gustaría conocer más de la tecnología de <strong>[empresa]</strong> o cómo incorporarla a tu empresa?</p><a href='../contact'>Contáctanos</a>",
+                 "en": "<p>Would you like to learn more about <strong>[empresa]</strong> technology or how to incorporate it into your company?</p><a href='../contact'>Contact us</a>",
+                 "pt": "<p>Gostaria de saber mais sobre a tecnologia <strong>[empresa]</strong> ou como incorporá-la à sua empresa?</p><a href='../contact'>Contate-nos</a>"
+            },
+            "link": "../contact"
+        }
     ]
 }

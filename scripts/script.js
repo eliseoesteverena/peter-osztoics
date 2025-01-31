@@ -11,7 +11,9 @@ async function writeHeaderPage(language) {
     if (storedVersion !== menuVersion) {
         let header = ``;
         header = `
-                <a class="logo" href="/">&nbsp;</a>
+                <a class="logo" href="/" aria-label="Peter's Papers Solutions - Inicio">
+                    <img src="../img/logo-pps.svg" alt="Peter's Papers Solutions - Inicio">
+                    </a>
                 <button id="openMenu" class="open-menu" onclick="openMenu('nav')">&#32;</button>
                     <nav id="nav" class="nav"> 
                         <a href="${menuItems[0].link}">${menuItems[0].title[language]}</a>
@@ -32,9 +34,9 @@ async function writeHeaderPage(language) {
                 <span class="select-lang-txt">${menuItems[5].title[language]}</span>
                     <a class="openLangs">&nbsp;</a>
                         <div class="flags" id="flags">
-                            <a id="langEn" onclick="setLang('en');"><img class="flag en" src="../img/gb.svg"></a>
-                            <a id="langEs" onclick="setLang('es');"><img class="flag es" src="../img/es.svg"></a>
-                            <a id="langPt" onclick="setLang('pt');"><img class="flag pt" src="../img/pt.svg"></a>
+                            <a id="langEn" onclick="setLang('en');" aria-label="Change language to english"><img class="flag en" src="../img/gb.svg" alt="Change language to english"></a>
+                            <a id="langEs" onclick="setLang('es');" aria-label="Cambiar idioma al español"><img class="flag es" src="../img/es.svg" alt="Cambiar idioma al español"></a>
+                            <a id="langPt" onclick="setLang('pt');" aria-label="Mudar idioma para português"><img class="flag pt" src="../img/pt.svg" alt="Mudar idioma para português"></a>
                         </div>
                 </div>`
         
@@ -47,28 +49,7 @@ async function writeHeaderPage(language) {
     }
 }
 
-// Complementarias:
-// Agrupar por categorias:
-function groupByCategory(datos) {
-    // Crear un mapa para las categorías
-    const categorias = new Map();
-    datos.forEach(item => {
-        if (item.parent_id === null) {
-            // Agregar categorías al mapa con un array vacío para ítems
-            categorias.set(item.id, { ...item, items: [] });
-        }
-    });
-
-    // Asociar los ítems a sus categorías
-    datos.forEach(item => {
-        if (item !== null & item.parent_id !== null && categorias.has(item.parent_id)) {
-            categorias.get(item.parent_id).items.push(item);
-        }
-    });
-    
-    // Convertir el mapa a un array
-    return Array.from(categorias.values());
-}
+// ### Complementarias:
 
 // Escribir sub-menu tecnologias
 async function processByCategory(language) {
@@ -99,61 +80,108 @@ async function processByCategory(language) {
 }
 
 // Header y Footer de los articulos
-async function addToArticles(lang) {
-    const invalidatePages = ["/index", "/index.html", "/index-2", "/index-2.html", "/contact", "/contact.html", "/about-us", "/about-us.html", "/solutions", "/solutions.html"]; // ecepciones según location
+function validatePages(lang){
+    // Validación de pagina con articulo de empresa
+    const invalidatePages = ["./", "/index", "/index.html", "/index-2", "/index-2.html", "/contact", "/contact.html", "/about-us", "/about-us.html", "/solutions", "/solutions.html"]; // ecepciones según location
     let pageActual = window.location.pathname;
 
-    let message = ``;
+    const article = container.getElementsByTagName("article");
+    if(article !== null && !invalidatePages.includes(pageActual)){
+        addToArticles(lang);
+    }
+}
+
+async function addToArticles(lang) {
     const container = document.getElementById("container")
     const article = container.getElementsByTagName("article");
-
-    if(article !== null && !invalidatePages.includes(pageActual)){
-    let footer = document.createElement("section");
-    footer.classList.add("msg-article");
     let data = await getData();
     let empresas = data.empresas;
-    console.log(empresas)
-    const empresaActual = empresas.find(item => item.id === langContent.empresa.toLowerCase());
     
-    switch(lang){
-        case "es":
-            message = `<p>¿Te gustaría conocer más de la tecnología de <strong>${empresaActual.title.es}</strong> o cómo incorporarla a tu empresa?</p><a href="../contact.html">Contáctanos</a>`;
-            break;
-        case "en":
-            message = `<p>Would you like to learn more about <strong>${empresaActual.title.es}</strong> technology or how to incorporate it into your company?</p><a href="../contact.html">Contact us</a>`;
-            break;
-        case "pt":
-            message = `<p>Gostaria de saber mais sobre a tecnologia <strong>${empresaActual.title.es}</strong> ou como incorporá-la à sua empresa?</p><a href="../contact.html">Contate-nos</a>`;
-            break;
+    const empresaActual = findInObject(langContent.empresa, empresas);
+    // Meta-Descriptions
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = "description";
+        document.head.appendChild(meta);
     }
-    footer.innerHTML = message;
+    meta.setAttribute("content", empresaActual.subtitle[lang]);
     
-    let headerArticle = `
-                        <header class="header-article">
+    // Cabecera Articulo
+    let headerArticle = `<header class="header-article">
                             <div>
                                 <a class="link-page-empresa"
-                                   href="` + empresaActual.title.es + `" target="_blank">
-                                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#173E00" fill-rule="evenodd" d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0Zm6.9 6H14c-.3-1.3-.8-2.4-1.4-3.6 1.8.7 3.4 1.9 4.3 3.6ZM10 2c.8 1.2 1.5 2.5 1.9 4H8.1c.4-1.4 1.1-2.8 1.9-4ZM2.3 12c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2h3.4c-.1.7-.1 1.3-.1 2s.1 1.3.1 2H2.3Zm.8 2H6c.3 1.3.8 2.4 1.4 3.6-1.8-.7-3.4-1.9-4.3-3.6ZM6 6H3.1c1-1.7 2.5-2.9 4.3-3.6C6.8 3.6 6.3 4.7 6 6Zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.4-1.1 2.8-1.9 4Zm2.3-6H7.7c-.1-.7-.2-1.3-.2-2s.1-1.3.2-2h4.7c.1.7.2 1.3.2 2s-.2 1.3-.3 2Zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9c-.9 1.7-2.5 2.9-4.3 3.6Zm1.8-5.6c.1-.7.1-1.3.1-2s-.1-1.3-.1-2h3.4c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.4Z"/></svg>
-                                   <span>website
-                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
-                                   </span> 
-                                   </a>
+                                href='${empresaActual.webpage}' target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#173E00" fill-rule="evenodd" d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0Zm6.9 6H14c-.3-1.3-.8-2.4-1.4-3.6 1.8.7 3.4 1.9 4.3 3.6ZM10 2c.8 1.2 1.5 2.5 1.9 4H8.1c.4-1.4 1.1-2.8 1.9-4ZM2.3 12c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2h3.4c-.1.7-.1 1.3-.1 2s.1 1.3.1 2H2.3Zm.8 2H6c.3 1.3.8 2.4 1.4 3.6-1.8-.7-3.4-1.9-4.3-3.6ZM6 6H3.1c1-1.7 2.5-2.9 4.3-3.6C6.8 3.6 6.3 4.7 6 6Zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.4-1.1 2.8-1.9 4Zm2.3-6H7.7c-.1-.7-.2-1.3-.2-2s.1-1.3.2-2h4.7c.1.7.2 1.3.2 2s-.2 1.3-.3 2Zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9c-.9 1.7-2.5 2.9-4.3 3.6Zm1.8-5.6c.1-.7.1-1.3.1-2s-.1-1.3-.1-2h3.4c.2.6.3 1.3.3 2s-.1 1.4-.3 2h-3.4Z"/></svg>
+                                <span>website
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                                </span> 
+                                </a>
                             </div>
                             <div>
                                 <span class="country-empresa"> ${empresaActual.country} </span>
                             </div>
-                        </header>
-                        `;
+                        </header>`;
 
+    let content = article[0].innerHTML
+    const modifiedContent = content.replace(
+        /(<h1.*?>.*?<\/h1>)/i, 
+        '$1' + headerArticle
+    );
+
+    // Pie de Articulo
+    const messageFind = findInObject("message", data.others) 
+    let message = messageFind.content[lang].replace("[empresa]", empresaActual.title.es);
     
-        article[0].appendChild(footer); 
-        let content = article[0].innerHTML
-        const modifiedContent = content.replace(
-            /(<h1.*?>.*?<\/h1>)/i, 
-            '$1' + headerArticle
-          );
-        article[0].innerHTML = modifiedContent;
+    let footer = document.createElement("section");
+    footer.classList.add("msg-article");
+    footer.innerHTML = message;
+
+    // Escritura
+    article[0].innerHTML = modifiedContent;
+    article[0].appendChild(footer); 
+}
+
+// Agrupar por categorias:
+function groupByCategory(datos) {
+    // Crear un mapa para las categorías
+    const categorias = new Map();
+    datos.forEach(item => {
+        if (item.parent_id === null) {
+            // Agregar categorías al mapa con un array vacío para ítems
+            categorias.set(item.id, { ...item, items: [] });
+        }
+    });
+
+    // Asociar los ítems a sus categorías
+    datos.forEach(item => {
+        if (item !== null & item.parent_id !== null && categorias.has(item.parent_id)) {
+            categorias.get(item.parent_id).items.push(item);
+        }
+    });
+    
+    // Convertir el mapa a un array
+    return Array.from(categorias.values());
+}
+
+async function processData(typeData) {
+    const data = await getData(); // Esperar a que getData() termine
+    switch (typeData) {
+        case "menu":
+            return groupByCategory(data.menuItems);
+        case "empresas":
+            return groupByCategory(data.empresas);
+        default:
+            throw new Error("Tipo de dato no válido");
     }
+}
+
+function findInObject(idToFind, data) {
+    // Convertimos la cadena de búsqueda a minúsculas y la dividimos en palabras
+    const words = idToFind.toLowerCase().split(" ");
+
+    // Buscamos en el array si alguna palabra coincide con el "id" de un objeto
+    return data.find(obj => words.some(word => obj.id.includes(word)));
 }
 
 function getData() {
@@ -171,17 +199,6 @@ function getData() {
         });
 }
 
-async function processData(typeData) {
-    const data = await getData(); // Esperar a que getData() termine
-    switch (typeData) {
-        case "menu":
-            return groupByCategory(data.menuItems);
-        case "empresas":
-            return groupByCategory(data.empresas);
-        default:
-            throw new Error("Tipo de dato no válido");
-    }
-}
 
 // Comportamiento UI/UX:
 function blurElements(element, index, array){
